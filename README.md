@@ -32,6 +32,6 @@ BONUS:
 
 Todo el código debe escribirse usando React Hooks y código funcional.
 
-Se valorará el código limpio y ordenado.
+Se valorará el código limpio y ordenado. Utilización de buenas prácticas.
 
 Los bonus son opcionales.
