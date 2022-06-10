@@ -23,6 +23,7 @@ Te contactaremos a la brevedad con nuestros comentarios.
 
 
 BONUS:
+
 1- Migrar de contex de React a react-redux
 
 2- Utilizar TailwindCSS para darle estilos
@@ -39,13 +40,19 @@ Los bonus son opcionales.
 ## Bibliografía sugerida
 
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 https://beta.reactjs.org/learn/describing-the-ui
+
 https://beta.reactjs.org/learn/updating-objects-in-state
+
 https://beta.reactjs.org/learn/updating-arrays-in-state
+
 https://beta.reactjs.org/learn/scaling-up-with-reducer-and-context
 
 Bonus: 
+
 https://react-redux.js.org/introduction/getting-started
+
 https://tailwindcss.com/docs/guides/create-react-app
