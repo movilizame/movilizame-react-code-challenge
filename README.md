@@ -10,7 +10,7 @@ Te contactaremos a la brevedad con nuestros comentarios.
 
 ## Consignas
 
-1- Implementar en services/movies.js llamada a la API de peliculas para buscar por título
+1- Implementar en services/movies.js llamada a la API de peliculas para buscar por título utilizando fetch
 
 2- Desarrollar 3 componentes:
 
@@ -35,3 +35,17 @@ Todo el código debe escribirse usando React Hooks y código funcional.
 Se valorará el código limpio y ordenado. Utilización de buenas prácticas.
 
 Los bonus son opcionales.
+
+## Bibliografía sugerida
+
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+https://beta.reactjs.org/learn/describing-the-ui
+https://beta.reactjs.org/learn/updating-objects-in-state
+https://beta.reactjs.org/learn/updating-arrays-in-state
+https://beta.reactjs.org/learn/scaling-up-with-reducer-and-context
+
+Bonus: 
+https://react-redux.js.org/introduction/getting-started
+https://tailwindcss.com/docs/guides/create-react-app
