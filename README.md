@@ -10,7 +10,7 @@ Al finalizar escribinos un email con tus datos a contacto@movilizame.com.ar y te
 
 ## Consignas
 
-1- Implementar en services/movies.js llamada a la API de peliculas para buscar por título utilizando fetch
+1- Implementar en services/movies.js llamada a la API de peliculas para buscar por título utilizando fetch. Se espera que sea un modulo que exporte un objeto con funciones que llamen a la API.
 
 2- Desarrollar 3 componentes:
 
@@ -20,6 +20,9 @@ Al finalizar escribinos un email con tus datos a contacto@movilizame.com.ar y te
 
 - C- WatchList: Este componente mostrará un listado de las películas que están en la lista del usuario.
 
+Diseño orientativo:
+
+![diseño orientativo](https://github.com/movilizame/movilizame-react-code-challenge/blob/main/design.png?raw=true)
 
 
 BONUS:
