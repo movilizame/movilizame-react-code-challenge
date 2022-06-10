@@ -20,7 +20,7 @@ Al finalizar escribinos un email con tus datos a contacto@movilizame.com.ar y te
 
 - C- WatchList: Este componente mostrará un listado de las películas que están en la lista del usuario.
 
-Diseño orientativo:
+Diseño orientativo (utilizar flexbox):
 
 ![diseño orientativo](https://github.com/movilizame/movilizame-react-code-challenge/blob/main/design.png?raw=true)
 
