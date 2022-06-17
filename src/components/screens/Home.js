@@ -5,7 +5,7 @@ import WatchList from "../ui/WatchList";
 export default function Home () {
     return (
         <div>
-            <h1>¿Qué puedo mirar?</h1>
+            <h1>Peliculas para mirar</h1>
             <div>
                 <SearchMovies />
                 <MoviesList />
