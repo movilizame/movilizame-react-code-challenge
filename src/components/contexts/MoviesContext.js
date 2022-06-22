@@ -24,6 +24,7 @@ function moviesReducer(state, action) {
 
 export default function MoviesContextProvider ({ children }) {
     const [auth, dispatch] = useReducer(moviesReducer, {});
+
     return (
         <MoviesContext.Provider value={auth}>
             <MoviesDispatchContext.Provider value={dispatch}>
