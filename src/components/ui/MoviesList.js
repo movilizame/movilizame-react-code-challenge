@@ -12,11 +12,30 @@ export default function MoviesList () {
                 (
                     <div>
                         {movies.map(movie => (
-                            <article>
+                            <article key={movie.id}>
                                 <img src={imageRoute.concat(movie.poster_path)} alt="" width="70" height="70"/>
                                 <div>
                                     <h2>{movie.original_title}</h2>
+                                    <dl>
+                                        <div>
+                                            <dd>{movie.vote_average}</dd>
+                                        </div>
+                                        <div>
+                                            <dt>Language</dt>
+                                            <dd>{movie.original_language.toUpperCase()}</dd>
+                                        </div>
+                                        <div>
+                                            <dt>Year</dt>
+                                            <dd>{new Date(movie.release_date).getFullYear()}</dd>
+                                        </div>
+                                        <div>
+                                            <dt>Popularity</dt>
+                                            <dd>Popularidad: {Math.trunc(movie.popularity)}</dd>
+                                        </div>
+                                    </dl>
                                 </div>
+                                
+                                    
                             </article>
                         ))}
                     </div>
