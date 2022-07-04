@@ -18,19 +18,32 @@ function moviesReducer(state, action) {
             movies: [],
           };
         }
+        case 'setList': {
+          return {
+            ...state,
+            list: state.list.concat(action.list)
+          }
+        }
+        case 'deleteItem': {
+          return {
+            ...state,
+            list: state.list.filter(item => item.id !== action.list.id)
+          }
+        }
         default: {
           throw Error('Unknown action: ' + action.type);
         }
     }
 }
 const initialState = {
-  movies: []
+  movies: [],
+  list: []
 }
 
 export default function MoviesContextProvider ({ children }) {
     const [auth, dispatch] = useReducer(moviesReducer, initialState);
     return (
-      <MoviesContext.Provider value={{ movies: auth.movies, dispatch}}>
+      <MoviesContext.Provider value={{ movies: auth.movies, dispatch, list: auth.list }}>
         {children}
       </MoviesContext.Provider>
     )
