@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { loadMovies } from 'services/movies';
+import { useMoviesContext } from "components/contexts/MoviesContext.js";
 
 export default function SearchMovies () {
+    const { dispatch } = useMoviesContext();
+
     const [title, setTitle] = useState('');
     const [year, setYear] = useState('');
 
