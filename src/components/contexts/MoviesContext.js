@@ -8,7 +8,7 @@ function moviesReducer(state, action) {
     switch (action.type) {
         case 'setMovies': {
           return {...state, 
-            movies: action.movies,
+            movies: state.movies.concat(action.movies),
           };
         }
         case 'clear': {
@@ -21,9 +21,12 @@ function moviesReducer(state, action) {
         }
     }
 }
+const initialState = {
+  movies: []
+}
 
 export default function MoviesContextProvider ({ children }) {
-    const [auth, dispatch] = useReducer(moviesReducer, {});
+    const [auth, dispatch] = useReducer(moviesReducer, initialState);
     return (
         <MoviesContext.Provider value={auth}>
             <MoviesDispatchContext.Provider value={dispatch}>
