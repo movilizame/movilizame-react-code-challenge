@@ -1,4 +1,4 @@
-const { createContext, useReducer } = require("react")
+const { createContext, useReducer, useContext } = require("react")
 
 export const MoviesContext = createContext(null);
 
