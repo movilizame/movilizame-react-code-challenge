@@ -18,3 +18,7 @@ async function loadMovies(title) {
     console.error(e);
   }
 }
+
+module.exports = {
+    loadMovies
+}
