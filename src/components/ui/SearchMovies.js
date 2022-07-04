@@ -5,7 +5,18 @@ export default function SearchMovies () {
     const [title, setTitle] = useState('');
     const [year, setYear] = useState('');
 
+    const handleTitle = (e) => {
+        setTitle(e.target.value);
+    }
+    
+    const handleYear = (e) => {
+        setYear(e.target.value);
+    }
 
+    async function handleSubmit() {
+        const moviesLoad = await loadMovies(title);
+        const movies = moviesLoad.results;
+    }
     return (
         <div>
             <div>
