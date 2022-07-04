@@ -16,6 +16,18 @@ export default function SearchMovies () {
     async function handleSubmit() {
         const moviesLoad = await loadMovies(title);
         const movies = moviesLoad.results;
+        dispatch({
+            type: 'clear'
+          })
+          movies.forEach(movie => {
+            const currentDate = new Date(movie.release_date).getFullYear();
+            if (currentDate <= year) {
+              dispatch({
+                type: 'setMovies',
+                movies: movie
+              })
+            }
+          })
     }
     return (
         <div>
