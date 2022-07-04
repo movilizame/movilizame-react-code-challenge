@@ -2,6 +2,10 @@ const { createContext, useReducer } = require("react")
 
 export const MoviesContext = createContext(null);
 
+export const useMoviesContext = () => {
+  return useContext(MoviesContext);
+}
+
 function moviesReducer(state, action) {
     switch (action.type) {
         case 'setMovies': {
