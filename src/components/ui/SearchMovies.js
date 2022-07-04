@@ -1,4 +1,10 @@
+import { useState } from "react";
+import { loadMovies } from 'services/movies';
+
 export default function SearchMovies () {
+    const [title, setTitle] = useState('');
+    const [year, setYear] = useState('');
+
 
     return (
         <div>
@@ -14,7 +20,7 @@ export default function SearchMovies () {
                 <p>Año hasta</p>
                 <input
                     onChange={handleYear} 
-                    type="search"
+                    type="number"
                     placeholder="Ingrese un año"
                 />
             </div>
