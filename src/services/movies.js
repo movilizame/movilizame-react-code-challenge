@@ -1,5 +1,24 @@
-// b7d4916d0799dfce932437fe9f242f2c
-// REVIEW: Esta es la API key de movie database
-// ENDPOINTS: https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&query=<<titulo>>&page=1&include_adult=false
-// DOCUMENTACIÓN: https://developers.themoviedb.org/3/search/search-movies
-// TODO: Implementar llamada a la API usando fetch
+const key = 'b7d4916d0799dfce932437fe9f242f2c';
+const url = 'https://api.themoviedb.org/3/search/movie?api_key=';
+
+async function loadMovies(title) {
+  try {
+    const request = await fetch(`${url}${key}&language=en-US&query=${title}&page=1&include_adult=false`,
+      {
+        headers:
+        {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+    const json = await request.json();
+    return json;
+  }
+  catch (e) {
+    console.error(e);
+  }
+}
+
+module.exports = {
+  loadMovies
+}

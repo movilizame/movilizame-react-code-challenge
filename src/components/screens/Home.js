@@ -1,19 +1,23 @@
-import MoviesList from "../ui/MoviesList";
-import SearchMovies from "../ui/SearchMovies";
-import WatchList from "../ui/WatchList";
+import MoviesList from "components/ui/MoviesList";
+import NavBar from "components/ui/NavBar";
+import SearchMovies from "components/ui/SearchMovies";
+import WatchList from "components/ui/WatchList";
 
-export default function Home () {
-    return (
-        <div>
-            <h1>¿Qué puedo mirar?</h1>
-            <div>
-                <SearchMovies />
-                <MoviesList />
-            </div>
-            <div>
-                <WatchList />
-            </div>
-            
+export default function Home() {
+  return (
+    <div>
+      <NavBar />
+      <div className='grid grid-cols-6'>
+        <div className='col-span-4'>
+          <div className="ml-4">
+            <SearchMovies />
+          </div>
+          <MoviesList />
         </div>
-    )
+        <div className='col-span-2 mr-1'>
+          <WatchList />
+        </div>
+      </div>
+    </div>
+  )
 }
