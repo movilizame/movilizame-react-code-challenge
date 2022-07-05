@@ -12,27 +12,27 @@ export default function WatchList() {
   }
 
   return (
-    <div>
-      <h1>Mi Lista</h1>
+    <div className='divide-y divide-slate-100'>
+      <h1 className='font-bold text-3xl'>Mi Lista</h1>
       {list.length > 0 ?
         (
-          <ul>
+          <ul className='bg-blue-700 rounded-md'>
             {list.map(item => (
-              <article>
-                <div>
-                  <h2>{item.original_title}</h2>
+              <article key={item.id} className="">
+                <div className="flex m-2 pb-4">
+                  <h2 className="font-semibold text-white">{item.original_title}</h2>
                   <button
-                    className=""
+                    className="ml-auto justify-center w-8 h-6 text-white rounded-lg focus:bg-"
                     onClick={() => deleteItem(item)}>
                     X
                   </button>
                 </div>
-                <hr />
+                <hr className="text-white" />
               </article>
             ))}
           </ul>
         )
-        : <p>No hay nada en la lista...</p>
+        : <ul className="mt-2">No hay nada en la lista...</ul>
       }
     </div>
   )
