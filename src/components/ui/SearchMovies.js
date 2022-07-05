@@ -67,7 +67,7 @@ export default function SearchMovies() {
           </p>
           <input
             onKeyPress={handleKeypress}
-            onChange={handleChange}
+            onChange={handleTitle}
             type="search"
             style={{ borderColor: validateTitle ? "black" : "red" }}
             className="flex-auto px-3 py-1.5 border rounded focus:text-gray-700 focus:border-blue-600 focus:outline-none"
@@ -87,7 +87,7 @@ export default function SearchMovies() {
           </p>
           <input
             onKeyPress={handleKeypress}
-            onChange={handleNumber}
+            onChange={handleYear}
             type="number"
             style={{ borderColor: validateYear ? "black" : "red" }}
             className="flex-auto px-3 py-1.5 border rounded focus:text-gray-700 focus:border-blue-600 focus:outline-none"
