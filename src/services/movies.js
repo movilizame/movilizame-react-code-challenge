@@ -20,5 +20,5 @@ async function loadMovies(title) {
 }
 
 module.exports = {
-    loadMovies
+  loadMovies
 }
