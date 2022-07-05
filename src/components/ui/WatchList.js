@@ -4,6 +4,13 @@ export default function WatchList () {
     const { list } = useMoviesContext();
     const { dispatch } = useMoviesContext();
 
+    const deleteItem = (item) => {
+        dispatch({
+          type: 'deleteItem',
+          list: item
+        })
+    }
+
     return (
         <div>
             <h1>Mi Lista</h1>
@@ -14,7 +21,11 @@ export default function WatchList () {
                             <article>
                                 <div>
                                     <h2>{item.original_title}</h2>
-                                    <button>X</button>
+                                    <button
+                                        className=""
+                                        onClick={() => deleteItem(item)}>
+                                        X
+                                    </button>
                                 </div>
                                 <hr />
                             </article>
