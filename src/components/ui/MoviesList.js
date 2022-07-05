@@ -2,9 +2,23 @@ import React from "react";
 import { useMoviesContext } from "components/contexts/MoviesContext";
 
 export default function MoviesList () {
-    // const { dispatch } = useMoviesContext();
+    const { dispatch } = useMoviesContext();
     const { movies } = useMoviesContext();
+    const { list } = useMoviesContext();
     const imageRoute = 'https://image.tmdb.org/t/p/w500';
+
+    const handleList = (movie) => {
+        dispatch({
+          type: 'setList',
+          list: movie
+        })
+      }
+      const deleteOnList = (movie) => {
+        dispatch({
+          type: 'deleteItem',
+          list: movie
+        })
+      }
 
     return (
         <div>
@@ -33,6 +47,19 @@ export default function MoviesList () {
                                             <dd>Popularidad: {Math.trunc(movie.popularity)}</dd>
                                         </div>
                                     </dl>
+                                    {list.some(item => item.id === movie.id) ? 
+                                        <button 
+                                            className='' 
+                                            onClick={() => deleteOnList(movie)}>
+                                            Quitar de mi lista
+                                        </button> 
+                                        :
+                                        <button 
+                                            className='' 
+                                            onClick={() => handleList(movie)}>
+                                            Agregar a mi lista
+                                        </button>
+                                    }
                                 </div>
                                 
                                     
