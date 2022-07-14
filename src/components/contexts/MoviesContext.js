@@ -1,4 +1,6 @@
+import getMovies from "../../services/movies";
 const { createContext, useReducer } = require("react")
+
 
 export const MoviesContext = createContext(null);
 export const MoviesDispatchContext = createContext(null);
@@ -16,16 +18,32 @@ function moviesReducer(state, action) {
             movies: [],
           };
         }
+        case 'addMovie': {
+          return {
+            ...state,
+            watchList: state.watchList.concat(action.watchList)
+          }
+        }
+        case 'deleteMovie': {
+          return {...state,
+            watchList: state.watchList.filter((movie)=> action.watchList.id !== movie.id)
+          };
+        }
         default: {
           throw Error('Unknown action: ' + action.type);
         }
     }
 }
 
+export const initialState = {
+          movies: [],
+          watchList:[]
+} 
+
 export default function MoviesContextProvider ({ children }) {
-    const [auth, dispatch] = useReducer(moviesReducer, {});
+    const [auth, dispatch] = useReducer(moviesReducer, initialState);
     return (
-        <MoviesContext.Provider value={auth}>
+        <MoviesContext.Provider value={{movies: auth.movies, watchList: auth.watchList}}>
             <MoviesDispatchContext.Provider value={dispatch}>
                 { children }
             </MoviesDispatchContext.Provider>

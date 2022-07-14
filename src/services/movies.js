@@ -6,26 +6,26 @@
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
 import { useState, useEffect } from 'react'
+import moment from 'moment'
+
+export async function getMovies(title, date) {
+  
+  try {
+    const baseUrl = "https://api.themoviedb.org/3/search/movie?api_key="
+    const apiKey = "b7d4916d0799dfce932437fe9f242f2c"
+    const lenAndQuery = "&language=en-US&query="
+    const endUrl = "&page=1&include_adult=false"
 
 
-export default function Movies ({title, year,}) {
-const key = "b7d4916d0799dfce932437fe9f242f2c"
-const [datas, setDatas] = useState([])
+    const res = await fetch(baseUrl + apiKey + lenAndQuery + title + endUrl)
+    const allData = await res.json()
+    let movies = allData["results"]
 
-useEffect(() => {
-fetch(`https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${title}&page=1&include_adult=false`)
-.then(response =>  response.json())
-.then((data) =>  {setDatas(data.results)
-console.log(datas)})
-}, [title, year, datas]);
-
-return (<div>
-{datas.length > 0 && (datas.filter(datas => datas?.release_date.slice(0,4)  <= year)).slice(0,3).map(datas => (
-  <div>
-{datas.release_date.slice(0,4)} 
-</div>)
-)}
-</div>)
+    return (movies.filter((movie)=> moment(movie.release_date).isBefore(date+"-01-01")))
+  }
+  catch (error){
+    throw new Error (error);}
 }
+
 
 
