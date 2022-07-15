@@ -66,7 +66,7 @@ export default function MoviesList(props) {
           </div>
         ))
       ) : (
-        <h6></h6>
+        null
       )}
     </div>
   );

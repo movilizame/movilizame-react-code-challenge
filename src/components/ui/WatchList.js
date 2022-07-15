@@ -12,12 +12,12 @@ export default function WatchList() {
 
   return (
     <div className="wl-container">
-      <h1>Watch list</h1>
+      <h1>Watchlist</h1>
       {watchList.length > 0 ? (
         watchList.map((movie) => (
           <div key={movie.id} className="wl">
             <h3>{movie.title}</h3>
-            
+
             <button
               onClick={() => {
                 deleteMovieFromWatchlist(movie, dispatch);
@@ -25,11 +25,10 @@ export default function WatchList() {
             >
               X
             </button>
-            
           </div>
         ))
       ) : (
-        <h5>Aun no hay elementos en su watchlist</h5>
+        <p>Aun no hay elementos en su watchlist</p>
       )}
     </div>
   );

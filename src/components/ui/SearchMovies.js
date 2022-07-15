@@ -21,7 +21,7 @@ export default function SearchMovies() {
   return (
     <div className="search-container">
       <div className="col">
-        <h3>Título</h3>
+        <h3>Título:</h3>
         <input
           placeholder="Movie"
           onChange={(event) => setTitle(event.target.value)}
@@ -34,6 +34,8 @@ export default function SearchMovies() {
           placeholder="Year"
           onChange={(event) => setYear(event.target.value)}
         ></input>
+      </div>
+      <div className="bt">
         <button
           onClick={() => {
             loadMoviesToContext(title, date);

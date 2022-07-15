@@ -57,14 +57,13 @@ code {
 
 .bt {
   display: flex;
-  text-align: center;
-  max-height: 30px;
-  align-items: flex-end;
+  vertical-align: bottom;
 }
 
 .search-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
+  border-color: 1px solid black;
 }
