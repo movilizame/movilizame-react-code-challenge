@@ -1,0 +1,39 @@
+.container {
+    background-color: #e5e5e5;
+    height: 100vh;
+    padding: 40px;
+}
+
+.container__title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.container__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container__content__left {
+    padding: 0px 50px 0px 0px;
+    width: 100%;
+}
+
+.container__content__right {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .container__content {
+        flex-direction: row;
+    }
+
+    .container__content__left {
+        width: 70%;
+    }
+
+    .container__content__right {
+        width: 30%;
+    }
+}
