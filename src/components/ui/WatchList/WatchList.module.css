@@ -1,0 +1,17 @@
+.container__title{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 24px;
+}
+
+.container__content{
+    padding: 20px;
+}
+
+.container__content__empty{
+    text-align: center;
+}
+
+.container__button{
+    height: 100px;
+}

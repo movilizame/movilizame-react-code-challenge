@@ -1,0 +1,26 @@
+.searchmovies {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.searchmovies__container {
+    display: flex;
+    height: 60px;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.searchmovies__container__button {
+    align-items: flex-end;
+    display: flex;
+    height: 100%;
+    width: 20%;
+}
+
+.searchmovies__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 24px;
+}

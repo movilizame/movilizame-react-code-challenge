@@ -1,0 +1,25 @@
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0px;
+}
+
+.container__title {
+    font-size: 18px;
+    width: 80%;
+}
+
+.container__button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    width: 20%;
+}
+
+.container__button__icon {
+    height: 50%;
+    width: 50%;
+}
