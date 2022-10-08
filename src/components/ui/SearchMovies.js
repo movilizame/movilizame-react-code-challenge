@@ -1,4 +1,14 @@
+import { useState } from 'react';
+import { getMovies } from '../../services/movies';
+
 export default function SearchMovies() {
+  const [title, setTitle] = useState('');
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    let movies = await getMovies('padrino');
+    movies = movies.results;
+    console.log(movies);
+  };
   return (
     <div>
       <form className=" flex flex-row items-end">
@@ -10,7 +20,7 @@ export default function SearchMovies() {
           <p>Año</p>
           <input type="number" placeholder="Ingrese año" />
         </div>
-        <button>Buscar</button>
+        <button onClick={onSubmit}>Buscar</button>
       </form>
     </div>
   );
