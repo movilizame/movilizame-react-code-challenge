@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { getMovies } from '../../services/movies';
+import { useMoviesContext } from '../contexts/MoviesContext';
 
 export default function SearchMovies() {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
+  const { dispatch } = useMoviesContext();
+
   const onSubmit = async (e) => {
     e.preventDefault();
     let movies = await getMovies(title);
@@ -11,7 +14,13 @@ export default function SearchMovies() {
     movies = movies.filter(
       (movie) => new Date(movie.release_date).getFullYear() < date,
     );
-    console.log(movies);
+    dispatch({
+      type: 'clear',
+    });
+    dispatch({
+      type: 'setMovies',
+      movies: movies,
+    });
   };
   return (
     <div>
