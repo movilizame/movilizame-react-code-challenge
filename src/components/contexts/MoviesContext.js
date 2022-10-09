@@ -16,6 +16,15 @@ function moviesReducer(state, action) {
     default: {
       throw Error('Unknown action: ' + action.type);
     }
+    case 'setList': {
+      return { ...state, list: state.list.concat(action.list) };
+    }
+    case 'deleteMovie': {
+      return {
+        ...state,
+        list: state.list.filter((item) => item.id !== action.movie),
+      };
+    }
   }
 }
 
