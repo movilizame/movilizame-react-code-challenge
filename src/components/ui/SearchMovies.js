@@ -3,10 +3,14 @@ import { getMovies } from '../../services/movies';
 
 export default function SearchMovies() {
   const [title, setTitle] = useState('');
+  const [date, setDate] = useState('');
   const onSubmit = async (e) => {
     e.preventDefault();
-    let movies = await getMovies('padrino');
+    let movies = await getMovies(title);
     movies = movies.results;
+    movies = movies.filter(
+      (movie) => new Date(movie.release_date).getFullYear() < date,
+    );
     console.log(movies);
   };
   return (
@@ -14,11 +18,23 @@ export default function SearchMovies() {
       <form className=" flex flex-row items-end">
         <div className="flex mt-100 mr-15 mx-1 ">
           <p>Titulo</p>
-          <input type="search" placeholder="Ingrese titulo" />
+          <input
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+            type="search"
+            placeholder="Ingrese titulo"
+          />
         </div>
         <div>
           <p>Año</p>
-          <input type="number" placeholder="Ingrese año" />
+          <input
+            onChange={(e) => {
+              setDate(e.target.value);
+            }}
+            type="number"
+            placeholder="Ingrese año"
+          />
         </div>
         <button onClick={onSubmit}>Buscar</button>
       </form>
