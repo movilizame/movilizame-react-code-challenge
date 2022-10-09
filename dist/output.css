@@ -589,6 +589,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.ml-60 {
+  margin-left: 15rem;
+}
+
 .flex {
   display: flex;
 }
@@ -605,6 +609,10 @@ video {
 
 .flex-row {
   flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-end {
