@@ -2,7 +2,23 @@ import { useMoviesContext } from '../contexts/MoviesContext';
 
 export default function WatchList() {
   const { movies } = useMoviesContext();
+  const { list } = useMoviesContext();
+  const { dispatch } = useMoviesContext();
   const imgRoute = 'https://image.tmdb.org/t/p/w300';
+
+  const onSubmit = (movie) => {
+    dispatch({
+      type: 'setList',
+      list: movie,
+    });
+  };
+
+  const deleteOnList = (movie) => {
+    dispatch({
+      type: 'deleteMovie',
+      movie: movie.id,
+    });
+  };
 
   return (
     <div>
@@ -24,6 +40,21 @@ export default function WatchList() {
               <p>Popularidad: {Math.round(movie.popularity)}</p>
             </div>
           </div>
+          {list.some((item) => item.id === movie.id) ? (
+            <div>
+              <button onClick={() => deleteOnList(movie)}>
+                Quitar de mi lista
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => {
+                onSubmit(movie);
+              }}
+            >
+              Agregar a mi lista
+            </button>
+          )}
         </div>
       ))}
     </div>
